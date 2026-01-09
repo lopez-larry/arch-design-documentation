@@ -15,7 +15,7 @@ A **Plan of Action & Milestones** documents:
 * When each milestone is due
 * When the risk will be considered resolved
 
-📍 **Required in NIST RMF**, FedRAMP, DoD, and generally good architecture hygiene.
+ **Required in NIST RMF**, FedRAMP, DoD, and generally good architecture hygiene.
 
 ---
 
