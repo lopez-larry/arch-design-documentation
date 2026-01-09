@@ -11,6 +11,12 @@ Footprint Position Bar Normalization:
 - Narrow [==========================] Broad
   - min = 15
   - max = 40
+  
+**Note on the Ratings**
+These scores are based on personal judgment and practical experience, not hard data or universal truth.
+Different teams may rate things differently depending on their needs, systems, and priorities.
+Feel free to tweak the numbers or categories to match your own reality.
+
 ---
 # Most Common Architectural Styles
 
