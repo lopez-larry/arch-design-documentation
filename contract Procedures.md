@@ -7,21 +7,21 @@ This procedure is especially important in:
 ## Updated Table: Contract Procedure & Tangible Deliverables
 
 |  # | **Step**                         | **Goal**                                       | **Deliverable**                         | **Format / Location**                                                              |
-| -: | -------------------------------- | ---------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------- |
-|  1 | **Define Endpoints**             | List what operations the service exposes       | ✅ Route definitions                     | `routes/*.js` or `routes/index.js` (Express), or GraphQL SDL                       |
-|  2 | **Define Request Schema**        | Validate incoming data structure               | ✅ Request validation schema             | `schemas/*.js` (Joi/Zod), or `schemas/*.json` (JSON Schema)                        |
-|  3 | **Define Response Schema**       | Shape returned data (avoid overfetch)          | ✅ DTOs, `.select()` queries, or mappers | `dto/*.js`, `utils/formatResponse.js`, or inline `.select()` in controllers        |
-|  4 | **Define Error Contract**        | Provide consistent error messages & structure  | ✅ Central error schema & error handler  | `utils/errorHandler.js`, `errors/*.json`, or error middleware                      |
-|  5 | **Define Authorization Rules**   | Document and enforce who can access what       | ✅ Auth middleware & RBAC map            | `middleware/auth.js`, `roles.js`, or `controllers/authGuard.js`                    |
-|  6 | **Declare Serialization Format** | Set the encoding rules for data sent over wire | ✅ JSON output shaped to spec            | Automatically handled, but standardized via `.toJSON()` overrides or GraphQL types |
-|  7 | **Plan Versioning Strategy**     | Manage safe API evolution                      | ✅ Versioned routes or schema files      | Route files like `routes/v1/users.js`, version tags in OpenAPI (`v1`)              |
-|  8 | **Publish Contract**             | Make it discoverable for consumers             | ✅ Interactive API docs UI               | `swagger.yaml` + Swagger UI, Redoc, or GraphQL Playground                          |
+| -: | -------------------------------- | ---------------------------------------------- | --------------------------------------- | ----------------------------------------- ----------------------------------------- |
+|  1 | **Define Endpoints**             | List what operations the service exposes       | Route definitions                     | `routes/*.js` or `routes/index.js` (Express), or GraphQL SDL                       |
+|  2 | **Define Request Schema**        | Validate incoming data structure               |  Request validation schema             | `schemas/*.js` (Joi/Zod), or `schemas/*.json` (JSON Schema)                        |
+|  3 | **Define Response Schema**       | Shape returned data (avoid overfetch)          |  DTOs, `.select()` queries, or mappers | `dto/*.js`, `utils/formatResponse.js`, or inline `.select()` in controllers        |
+|  4 | **Define Error Contract**        | Provide consistent error messages & structure  |  Central error schema & error handler  | `utils/errorHandler.js`, `errors/*.json`, or error middleware                      |
+|  5 | **Define Authorization Rules**   | Document and enforce who can access what       | Auth middleware & RBAC map            | `middleware/auth.js`, `roles.js`, or `controllers/authGuard.js`                    |
+|  6 | **Declare Serialization Format** | Set the encoding rules for data sent over wire |  JSON output shaped to spec            | Automatically handled, but standardized via `.toJSON()` overrides or GraphQL types |
+|  7 | **Plan Versioning Strategy**     | Manage safe API evolution                      | Versioned routes or schema files      | Route files like `routes/v1/users.js`, version tags in OpenAPI (`v1`)              |
+|  8 | **Publish Contract**             | Make it discoverable for consumers             | Interactive API docs UI               | `swagger.yaml` + Swagger UI, Redoc, or GraphQL Playground                          |
 
 ---
 
 Below is a step-by-step **procedure** you can use to define a formal contract, including **routes, schemas, auth, validation, and serialization**.
 ---
-## 🛠️ Procedure: How to Define the Components of a Contract
+## Procedure: How to Define the Components of a Contract
 ---
 ### **Step 1: Identify the Interaction Surface**
 > What *must* be exposed to other systems or clients?
@@ -30,7 +30,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Who are the consumers? (frontend, another domain, 3rd party)
 * What is the **intent** of the interaction? (read data, submit form, trigger workflow)
 
-🔹 Deliverable: A list of **endpoints or operations** to include. (Routes)
+Deliverable: A list of **endpoints or operations** to include. (Routes)
 ---
 
 ### **Step 2: Define the Request Contract**
@@ -44,7 +44,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
   * Field types (string, int, array)
   * Constraints (min/max, format, regex)
 
-🔹 Use JSON Schema, Joi, or Zod to define this formally.
+Use JSON Schema, Joi, or Zod to define this formally.
 ---
 
 ### **Step 3: Define the Response Contract**
@@ -57,7 +57,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
   * What types and formats?
   * Are any fields optional, nullable, or nested?
 
-🔹 Shape the response via DTOs, serializers, or `.select()` queries.
+Shape the response via DTOs, serializers, or `.select()` queries.
 ---
 
 ### **Step 4: Define Error Contracts**
@@ -68,7 +68,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Consistent format for all endpoints
 * HTTP status code usage
 
-🔹 Optionally use a shared `ErrorResponse` schema.
+Optionally use a shared `ErrorResponse` schema.
 ---
 
 ### **Step 5: Define Authorization & Access Rules**
@@ -78,7 +78,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Auth methods (JWT, API key, OAuth)
 * Field-level access restrictions (e.g., hide `isAdmin`)
 
-🔹 Document with RBAC tables or auth middleware.
+Document with RBAC tables or auth middleware.
 ---
 
 ### **Step 6: Declare Serialization Format**
@@ -88,7 +88,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Media type: `application/json`, `application/vnd.api+json`, etc.
 * Field naming: camelCase, snake_case?
 
-🔹 Use standardized serializers or REST conventions.
+Use standardized serializers or REST conventions.
 ---
 
 ### **Step 7: Versioning Strategy**
@@ -98,7 +98,7 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Semantic versioning for schema files
 * Field deprecation warnings (`@deprecated` or `_legacy` fields)
 
-🔹 Plan for backward compatibility.
+Plan for backward compatibility.
 ---
 
 ### **Step 8: Publish the Contract**
@@ -109,10 +109,10 @@ Below is a step-by-step **procedure** you can use to define a formal contract, i
 * Post to developer portal, API gateway, or schema registry
 * Enable Swagger UI or GraphQL Playground for exploration
 
-🔹 Contract is now *published* for self-service consumption.
+Contract is now *published* for self-service consumption.
 ---
 
-## 📌 Summary Checklist
+## Summary Checklist
 
 | Component            | Defined By                                 |
 | -------------------- | ------------------------------------------ |

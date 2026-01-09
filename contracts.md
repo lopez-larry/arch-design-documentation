@@ -28,10 +28,10 @@ A contract allows:
 - Strong boundaries so you can evolve safely without breaking others
 
 ## Why Contracts Matter
-| Benefit               | Impact                                                       |
-| --------------------- | ------------------------------------------------------------ |
-| ✅ **Loose Coupling**  | Services interact without knowing internals                  |
-| ✅ **Scalability**     | You can optimize data exchange (e.g., avoid overfetching)    |
-| ✅ **Security**        | Data access and shape are strictly controlled                |
-| ✅ **Version Control** | You can evolve your API without breaking consumers           |
-| ✅ **Discoverability** | Other teams can understand and use your API without meetings |
+| Benefit              | Impact                                                       |
+| -------------------- | ------------------------------------------------------------ |
+|  **Loose Coupling**  | Services interact without knowing internals                  |
+|  **Scalability**    | You can optimize data exchange (e.g., avoid overfetching)    |
+|  **Security**       | Data access and shape are strictly controlled                |
+|  **Version Control** | You can evolve your API without breaking consumers           |
+|  **Discoverability** | Other teams can understand and use your API without meetings |
