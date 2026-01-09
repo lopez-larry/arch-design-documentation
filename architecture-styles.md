@@ -1,11 +1,14 @@
 # Architecture Characteristics Rating Matrices
 
 Rating Scale:
-- weak support        = ★ 
-- moderate            = ★★  
-- strong              = ★★★ 
-- excellent           = ★★★★  
-- dominant strength   = ★★★★★ 
+| Rating   | Interpretation     |
+|----------|--------------------|
+| ★        | weak support       |
+| ★★       | moderate           |
+| ★★★      | strong             |
+| ★★★★     | excellent          |
+| ★★★★★    | dominant strength  |
+
 
 Footprint Position Bar Normalization: 
 - Narrow [==========================] Broad
