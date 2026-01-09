@@ -111,10 +111,4 @@ Here’s a **clean bullet-list** of the most common **business & technical reque
 * **Travel Request**
   Approval required for business trips or off-site events
 
----
-
-### Bonus Tip
-
-Most organizations follow **this lifecycle**:
-**RFI ➜ EOI ➜ RFP/RFQ/RFT ➜ BAFO ➜ SOW ➜ PO ➜ Implementation ➜ PIR**
 
