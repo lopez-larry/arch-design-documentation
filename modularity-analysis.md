@@ -176,24 +176,3 @@ Modules are logical units; components are deployable/replaceable units.
   * easier refactoring
   * clean deployment boundaries
   * scaling into microservices or plugins later
-
----
-
-# The Big Picture
-
-These measures all answer **one architectural question**:
-
-> *“How clean are the boundaries between the pieces of my system?”*
-
-High modularity →
-✔ easier change
-✔ more testable
-✔ evolvable architecture
-✔ clearer ownership
-
-Low modularity →
-❌ expensive change
-❌ brittle code
-❌ accidental complexity
-❌ architecture erosion
-
