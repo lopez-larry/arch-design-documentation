@@ -1,0 +1,173 @@
+# ==============================================================
+# GLOBAL .gitignore (Python + Node + Docker + Cypress + IDEs)
+# Updated: 2025-10-12
+# ==============================================================
+
+# --------------------
+# Python
+# --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage / testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Django / Flask
+*.log
+local_settings.py
+db.sqlite3*
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# --------------------
+# Node.js
+# --------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+coverage/
+logs/
+*.tsbuildinfo
+
+# Env files
+.env.local
+.env.development
+.env.test
+.env.production
+
+# --------------------
+# Docker
+# --------------------
+docker-data/
+pg-volume/
+.docker/
+*.pid
+*.pid.lock
+docker-compose.override.yml
+docker-compose.secrets.yml
+/var/run/docker.sock
+
+# --------------------
+# Databases
+# --------------------
+*.sql
+*.sql.gz
+*.dump
+*.pgdump
+pgdata/
+postgres_data/
+
+# --------------------
+# Cypress
+# --------------------
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+.cypress-cache/
+
+# --------------------
+# IDEs / Editors
+# --------------------
+# PyCharm
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Eclipse / Others
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# --------------------
+# OS junk
+# --------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.dontpester
+
+AWS/
+notes/
