@@ -3,11 +3,11 @@
 Rating Scale:
 | Rating   | Interpretation     |
 |----------|--------------------|
-| ★        | weak support       |
-| ★★       | moderate           |
-| ★★★      | strong             |
-| ★★★★     | excellent          |
-| ★★★★★    | dominant strength  |
+| 1 | weak support       |
+| 2 | moderate           |
+| 3 | strong             |
+| 4 | excellent          |
+| 5 | dominant strength  |
 
 
 Footprint Position Bar Normalization: 
