@@ -3,19 +3,19 @@ This procedure is especially important in:
 * **MERN apps** (backend-to-frontend API boundaries)
 * **Microservices** (domain-to-domain communication)
 * **Data Mesh** (data product contracts)
-
+  
 ## Updated Table: Contract Procedure & Tangible Deliverables
 
 |  # | **Step**                         | **Goal**                                       | **Deliverable**                         | **Format / Location**                                                              |
-| -: | -------------------------------- | ---------------------------------------------- | --------------------------------------- | ----------------------------------------- ----------------------------------------- |
-|  1 | **Define Endpoints**             | List what operations the service exposes       | Route definitions                     | `routes/*.js` or `routes/index.js` (Express), or GraphQL SDL                       |
-|  2 | **Define Request Schema**        | Validate incoming data structure               |  Request validation schema             | `schemas/*.js` (Joi/Zod), or `schemas/*.json` (JSON Schema)                        |
-|  3 | **Define Response Schema**       | Shape returned data (avoid overfetch)          |  DTOs, `.select()` queries, or mappers | `dto/*.js`, `utils/formatResponse.js`, or inline `.select()` in controllers        |
-|  4 | **Define Error Contract**        | Provide consistent error messages & structure  |  Central error schema & error handler  | `utils/errorHandler.js`, `errors/*.json`, or error middleware                      |
-|  5 | **Define Authorization Rules**   | Document and enforce who can access what       | Auth middleware & RBAC map            | `middleware/auth.js`, `roles.js`, or `controllers/authGuard.js`                    |
-|  6 | **Declare Serialization Format** | Set the encoding rules for data sent over wire |  JSON output shaped to spec            | Automatically handled, but standardized via `.toJSON()` overrides or GraphQL types |
-|  7 | **Plan Versioning Strategy**     | Manage safe API evolution                      | Versioned routes or schema files      | Route files like `routes/v1/users.js`, version tags in OpenAPI (`v1`)              |
-|  8 | **Publish Contract**             | Make it discoverable for consumers             | Interactive API docs UI               | `swagger.yaml` + Swagger UI, Redoc, or GraphQL Playground                          |
+| -: | -------------------------------- | ---------------------------------------------- | --------------------------------------- | ----------------------------------------- |
+|  1 | **Define Endpoints**             | List what operations the service exposes       | Route / operation definitions           | `routes/*.js`, `routes/index.js` (Express), or GraphQL SDL                         |
+|  2 | **Define Request Schema**        | Validate incoming data structure               | Request validation schema               | `schemas/*.js` (Joi/Zod) or `schemas/*.json` (JSON Schema)                         |
+|  3 | **Define Response Schema**       | Shape returned data (avoid over/under-fetch)   | DTOs, `.select()` queries, or mappers   | `dto/*.js`, `utils/formatResponse.js`, or inline `.select()` in controllers        |
+|  4 | **Define Error Contract**        | Provide consistent error messages & structure  | Central error schema & error handler    | `utils/errorHandler.js`, `errors/*.json`, or error-handling middleware             |
+|  5 | **Define Authorization Rules**   | Document and enforce who can access what       | Auth middleware & RBAC map              | `middleware/auth.js`, `roles.js`, or `controllers/authGuard.js`                    |
+|  6 | **Declare Serialization Format** | Set encoding rules for data sent over the wire | JSON output shaped to spec              | Mostly automatic; standardized via `.toJSON()` overrides or GraphQL type resolvers |
+|  7 | **Plan Versioning Strategy**     | Manage safe API evolution                      | Versioned routes or schema files        | Route files like `routes/v1/users.js`, version tags in OpenAPI (`v1`)              |
+|  8 | **Publish Contract**             | Make it discoverable for consumers             | Interactive API docs UI                 | `swagger.yaml` + Swagger UI, Redoc, or GraphQL Playground                          |
 
 ---
 
