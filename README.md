@@ -1,127 +1,152 @@
-# Architecture Design Documentation
+# Architecture Design Documentation Playbook
 
-This repository provides a structured reference for documenting, evaluating, and governing software architecture decisions.
-It includes templates, metrics, analysis frameworks, and supporting guidance aligned with modern software engineering practices.
+## Overview
 
----
+This repository is a **CTO-level architecture playbook** that captures how architectural decisions are **evaluated, justified, governed, and operationalized** across multiple architectural styles.
 
-## Purpose
+It is intentionally **decision-focused**, not tool-focused.
 
-This documentation set enables teams to:
+The materials here reflect modern architecture thinking as described in *Fundamentals of Software Architecture* (Richards & Ford) and are designed to support:
 
-* Characterize architectural styles and tradeoffs
-* Record and justify architectural decisions
-* Classify and route design requests (RFCs, ADRs, RFIs, etc.)
-* Assess modularity, cohesion, and complexity
-* Evaluate architectural risk and mitigation plans
-* Track compliance and remediation using POA&Ms
-* Establish repeatable contract and governance procedures
+- Architecture trade-off analysis
+- Portfolio and platform decision-making
+- Governance and operating model design
+- MVP planning and delivery alignment
+- Risk and compliance integration
+- Executive and academic review
 
-Together, these documents form a lightweight but comprehensive architecture governance toolkit.
-
----
-
-## Document Index
-
-### Architecture Foundations
-
-| File                                         | Description                                                                                                                                                         |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **architecture-styles.md**                   | Summaries of common architecture styles (monolith, service-based, microkernel, microservices, event-driven, space-based), including number of quanta and strengths. |
-| **architecture-characteristics-overview.md** | Overview of architecture characteristics (deployability, modifiability, scalability, testability, etc.) with star-matrix scoring guidance.                          |
-
-### Decision-Making & Communication
-
-| File                                 | Description                                                                     |
-| ------------------------------------ | ------------------------------------------------------------------------------- |
-| **architecture-decision-records.md** | ADR template and example usage for capturing architectural decisions over time. |
-| **request-type.md**                  | Definitions of request categories (RFI, RFC, ADR, RFP, RFD, etc.).              |
-| **request-types-purpose.md**         | Explains when each request type should be used and by whom.                     |
-| **request-type-matrix.md**           | Classification matrix (input, output, audience, usage) for all request types.   |
-| **request-type-templates.md**        | Cut-and-paste templates for each request type.                                  |
-
-### Modularity & Code-Level Analysis
-
-| File                        | Description                                                                                                                                                         |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **modularity-analysis.md**  | How to evaluate modularity using cohesion, coupling, connascence, abstraction levels, and deployment impact.                                                        |
-| **modularity-equations.md** | Formal definitions and equations for Abstractness (A), Instability (I), Distance from Main Sequence (D), and cohesion (LCOM variants). Fully derived and explained. |
-
-### Risk & Compliance
-
-| File                   | Description                                                                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **risk-management.md** | High-level architecture risk workflow (identify, score, mitigate, track), including mapping to NIST controls. |
-| **poam-template.md**   | Plan of Action & Milestones template for tracking risks, mitigation tasks, NIST controls, and due dates.      |
-
-### Contracts & Governance
-
-| File                         | Description                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------ |
-| **contract Procedures 2.md** | Outlines contract governance and approval workflows.                                 |
-| **contracts 2.md**           | Reference contract language, placeholders, or approval steps (depending on content). |
+This repository can be used as:
+- A **personal architecture portfolio**
+- A **reference playbook for CTOs / Chief Architects**
+- A **teaching or mentoring artifact**
+- A **foundation for consulting or advisory work**
 
 ---
 
-## How These Docs Fit Together
+## How to Use This Repository
 
-1. **Architecture selection & description**
+You do **not** need to read this repository linearly.
 
-   * Use *architecture-styles* + *architecture-characteristics-overview*
-     to evaluate which pattern fits the problem domain.
-
-2. **Make the decision explicit**
-
-   * Capture it via an **ADR** and classify any design queries using **request-type docs**.
-
-3. **Analyze modularity of the codebase**
-
-   * Use **modularity-analysis** + **modularity-equations**
-     to assess implementation health.
-
-4. **Evaluate risk**
-
-   * Map architectural concerns to governance via **risk-management**
-     and document mitigation using **poam-template**.
-
-5. **Formalize accountability**
-
-   * If external dependencies or legal frameworks apply, use **contracts** and **procedures**.
-
-This reinforces a repeatable feedback loop:
-Architecture intent → Decision → Implementation → Measurement → Risk → Adjustment
+Recommended entry points:
+- **Executives:** Start with Architecture Styles and Use Cases
+- **Architects:** Start with Architecture Characteristics and ADRs
+- **Delivery Leads:** Start with WBS and RACI sections
+- **Governance / Risk:** Start with Request Types and Risk Management
 
 ---
 
-## Recommended Usage Workflow
+## Repository Structure & Table of Contents
 
-1. Capture new questions using the correct request document
-2. Evaluate architectural options using styles + star matrix scoring
-3. Decide and document with ADRs
-4. Implement and periodically assess modularity metrics
-5. Identify emerging risks; track mitigation in POA&Ms
-6. Repeat
+### 00 — Start Here
+- **README.md**  
+  Repository overview, navigation, and intent.
 
 ---
 
-## Who Should Use This Repository
+### 10 — Foundations (How Architecture Is Evaluated)
+- **architecture-characteristics-overview.md**  
+  Defines core architecture characteristics (quality attributes), how trade-offs are evaluated, and why no architecture is universally “best.”
 
-* Software architects
-* Senior engineers
-* Product and platform owners
-* Security/compliance leads
-* Technical governance participants
+- **modularity-equations.md**  
+  Formal and conceptual models for reasoning about modularity.
 
 ---
 
-## Extending the Repository
+### 20 — Decisioning (How Architecture Decisions Are Made)
+- **architecture-decision-records.md**  
+  Architecture Decision Record (ADR) framework and decision log structure.
 
-Suggested next additions:
+---
 
-* Coupling and Connascence scoring rubric
-* ADR directory structure with numbering
-* Example master architecture roadmap
-* Change history tracking
-* Starter “business case” template for architecture proposals
-* Visualization of quanta evolution over time
+### 30 — Architecture Styles (What Options Exist)
+- **architecture-styles.md**  
+  Catalog of the most common architectural styles with footprint and trade-off summaries.
+
+- **architecture-style-use-case.md**  
+  Executive-level “when to use / when not to use” case studies for each style.
+
+- **architecture-style-starter-templates.md**  
+  Reusable templates for documenting architecture styles consistently.
+
+- **architecture-styles-wbs-mvp.md**  
+  MVP-level Work Breakdown Structures (WBS) for each architectural style.
+
+- **architecture-raci-mvp.md**  
+  MVP-level RACI matrices showing ownership and accountability by style.
+
+---
+
+### 40 — Delivery & Governance (How Work Enters the System)
+- **request-types-purpose.md**  
+  Why request types exist and how they support governance and flow control.
+
+- **request-type.md**  
+  Canonical definition of a request type.
+
+- **request-type-templates.md**  
+  Standard templates for request intake and execution.
+
+- **request-type-matrix.md**  
+  Decision matrix for selecting the appropriate request type.
+
+---
+
+### 50 — Risk & Compliance (How Risk Is Managed)
+- **risk-management.md**  
+  Risk identification, scoring, and mitigation approach.
+
+- **poam-template.md**  
+  Plan of Action & Milestones (POA&M) template for remediation tracking.
+
+- **contracts.md**  
+  Contract concepts (e.g., data contracts, API contracts, service agreements).
+
+- **contract-procedures.md**  
+  Operational procedures for contract lifecycle management.
+
+---
+
+### 60 — Analysis & Supporting Theory
+- **modularity-analysis.md**  
+  Deeper analytical material supporting architectural decisions and characteristics.
+
+---
+
+## Design Principles Behind This Repository
+
+- **Architecture is a business decision**, not a technology choice
+- **Trade-offs are explicit**, not hidden
+- **Governance scales with distribution**
+- **Organizational design and architecture are inseparable**
+- **MVP thinking applies to architecture, not just products**
+
+---
+
+## Intended Audience
+
+- CTOs / CIOs
+- Chief Architects / Enterprise Architects
+- Engineering Directors and Platform Leads
+- Graduate-level Computer Science students
+- Architecture review boards
+- Consultants and advisors
+
+---
+
+## Status
+
+This repository is a **living document**.  
+It is expected to evolve as architectural understanding, governance needs, and portfolio goals mature.
+
+---
+
+## Suggested Next Steps for Readers
+
+- Compare architectural styles using the WBS and RACI artifacts
+- Review ADRs to understand decision rationale
+- Use templates to document your own architectures
+- Extend the playbook with organization-specific constraints
+
+---
+
 
